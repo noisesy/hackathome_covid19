@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -22,6 +23,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.hackathome.covid19.MainActivity.PATIENT_ID;
+
 public class SecondFragment extends Fragment {
 
     @Override
@@ -39,6 +41,10 @@ public class SecondFragment extends Fragment {
         final TextInputEditText sTempe = view.findViewById(R.id.textInputEditText2);
         final TextInputEditText sNote = view.findViewById(R.id.textInputEditText);
 
+        final CheckBox sCheck1 = view.findViewById(R.id.checkBox);
+        final CheckBox sCheck2 = view.findViewById(R.id.checkBox2);
+        final CheckBox sCheck3 = view.findViewById(R.id.checkBox3);
+
         view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,11 +56,11 @@ public class SecondFragment extends Fragment {
                 Sintomi affaticamento = new Sintomi(1, "Affaticamento respiratorio");
                 Sintomi raffreddore = new Sintomi(2, "Raffreddore");
 
-                if(R.id.checkBox == 1)
+                if(sCheck1.isChecked())
                     listaSintomi.add(tosse);
-                if(R.id.checkBox2 == 1)
+                if(sCheck2.isChecked())
                     listaSintomi.add(affaticamento);
-                if(R.id.checkBox3 == 1)
+                if(sCheck3.isChecked())
                     listaSintomi.add(raffreddore);
 
                 mis.setId(0);
