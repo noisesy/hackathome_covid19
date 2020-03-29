@@ -131,7 +131,7 @@ public class FirstFragment extends Fragment {
 
             holder.sintomi.setText(sin);
 
-
+            holder.note.setText("NOTE:\n" + item.getNote());
 
 
             holder.misurazione.setText(Float.toString(item.getTemperaturaCorporea()));
@@ -146,12 +146,14 @@ public class FirstFragment extends Fragment {
             TextView data;
             TextView misurazione;
             TextView sintomi;
+            TextView note;
 
             MisurazioneViewHolder(View itemView) {
                 super(itemView);
                 data = itemView.findViewById(R.id.text_data);
                 misurazione = itemView.findViewById(R.id.text_misurazione);
                 sintomi = itemView.findViewById(R.id.text_sintomi);
+                note = itemView.findViewById(R.id.text_note);
             }
         }
     }
