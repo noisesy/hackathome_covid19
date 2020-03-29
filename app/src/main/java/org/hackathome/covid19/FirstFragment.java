@@ -127,7 +127,7 @@ public class FirstFragment extends Fragment {
                 holder.data.setText("Nessuna data");
             }
 
-            String sin= "SINTOMI:\n";
+            String sin= "";
             for (Sintomi s: item.getSintomi()) {
                 sin += s.getNome() + "\n";
 
@@ -135,7 +135,7 @@ public class FirstFragment extends Fragment {
 
             holder.sintomi.setText(sin);
 
-            holder.note.setText("NOTE:\n" + item.getNote());
+            holder.note.setText(item.getNote());
 
 
             holder.misurazione.setText(Float.toString(item.getTemperaturaCorporea()));
