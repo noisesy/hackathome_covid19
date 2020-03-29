@@ -44,7 +44,7 @@ public class FirstFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.recycler);
         mTextHead = view.findViewById(R.id.textview_first);
 
-        view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
