@@ -71,6 +71,7 @@ public class FirstFragment extends Fragment {
                         mMisurazioni.add(m);
                     }
 
+                    if (mMisurazioni!= null && mMisurazioni.size() > 0)
                     mTextHead.setText(mMisurazioni.get(0).getPaziente().getNome() +  " "+
                             mMisurazioni.get(0).getPaziente().getCognome());
 
