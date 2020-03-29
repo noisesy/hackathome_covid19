@@ -114,14 +114,14 @@ public class RestManager {
         return params;
     }
 
-    public Request getMisurazioni(String id, Response.Listener<Istanza> listener, Response.ErrorListener errorListener) {
+    public Request getMisurazioni(String id, Response.Listener<Misurazione[]> listener, Response.ErrorListener errorListener) {
         Log.i(TAG, "get Misurazioni for: " + id);
         if (queue == null)
             queue = Volley.newRequestQueue(_ctx);
-        GsonRequest<Istanza> request_plants = new GsonRequest<>(
+        GsonRequest<Misurazione[]> request_plants = new GsonRequest<>(
                 Request.Method.GET,
                 "https://tomcat.milosmagicworld.eu/webapp-coronastudio/api/misurazioni/" + id,
-                Istanza.class,
+                Misurazione[].class,
                 getHeaders(),
                 null,
                 null,
