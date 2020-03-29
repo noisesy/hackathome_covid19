@@ -15,7 +15,6 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-import org.hackathome.covid19.model.Istanza;
 import org.hackathome.covid19.model.Misurazione;
 
 import java.io.UnsupportedEncodingException;

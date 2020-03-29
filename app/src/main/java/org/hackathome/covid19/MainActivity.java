@@ -14,8 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import org.hackathome.covid19.model.Istanza;
 import org.hackathome.covid19.model.Misurazione;
 import org.hackathome.covid19.model.Paziente;
 import org.hackathome.covid19.model.Sintomi;
@@ -31,7 +29,7 @@ import java.util.ListIterator;
 public class MainActivity extends AppCompatActivity {
 
     // TODO: only for test purpose
-    public static ArrayList<Istanza> listaDiProva;
+    public static ArrayList<Misurazione> listaDiProva;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,45 +46,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-
-        Istanza a = new Istanza();
-        a.date = new Date(790124750475L);
-        a.name = "Ponzio";
-        a.surname = "Pilato";
-        a.temperature = 37.6F;
-        a.hasDifficoltàRespiratoria = true;
-
-        Istanza b = new Istanza();
-        b.date = new Date(890124750475L);
-        b.name = "Ponzio";
-        b.surname = "Pilato";
-        b.temperature = 37.8F;
-        b.hasDifficoltàRespiratoria = true;
-
-        Istanza c = new Istanza();
-        c.date = new Date(990124750475L);
-        c.name = "Ponzio";
-        c.surname = "Pilato";
-        c.temperature = 38.3F;
-        c.hasDifficoltàRespiratoria = true;
-        c.hasInappetenza = true;
-
-        Istanza d = new Istanza();
-        d.date = new Date(1090124750475L);
-        d.name = "Ponzio";
-        d.surname = "Pilato";
-        d.temperature = 39.9F;
-        d.hasDifficoltàRespiratoria = true;
-        d.hasTosseSecca = true;
-
-
-        listaDiProva = new ArrayList<Istanza>();
-        listaDiProva.add(a);
-        listaDiProva.add(b);
-        listaDiProva.add(c);
-        listaDiProva.add(d);
-
 
         Paziente paziente = new Paziente("666", "Pinco", "Pallino");
 
