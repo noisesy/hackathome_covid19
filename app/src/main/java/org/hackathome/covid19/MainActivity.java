@@ -5,17 +5,28 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import org.hackathome.covid19.model.Istanza;
+import org.hackathome.covid19.model.Misurazione;
+import org.hackathome.covid19.model.Paziente;
+import org.hackathome.covid19.model.Sintomi;
+import org.hackathome.covid19.rest.RestManager;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,6 +86,40 @@ public class MainActivity extends AppCompatActivity {
         listaDiProva.add(b);
         listaDiProva.add(c);
         listaDiProva.add(d);
+
+
+        Paziente paziente = new Paziente("666", "Pinco", "Pallino");
+
+
+        //int id, Paziente paziente, List<Sintomi> sintomi, float temperaturaCorporea,
+        //			String altrePatologie, String note, String data)
+
+        Sintomi sintomo_1 = new Sintomi(0, "Sifilide");
+        Sintomi sintomo_2 = new Sintomi(0, "Gonorrea");
+
+        List<Sintomi> listSintomi = new ArrayList<>();
+        listSintomi.add(sintomo_1);
+        listSintomi.add(sintomo_2);
+
+        Misurazione mis = new Misurazione(0, paziente, listSintomi, 37.6F, "nessuna", "", "");
+
+
+
+//
+//        RestManager.getInstance(this).postMisurazione (mis,
+//                response -> {
+//                    //Log.i("MAIN", response.toString());
+//                }, error -> {
+//                    Log.i("MAIN", "Error");
+//                });
+
+
+        RestManager.getInstance(this).getMisurazioni("666",
+                response -> {
+                    Log.i("MAIN", response.toString());
+                }, error -> {
+                    Log.i("MAIN", "Error");
+                });
 
     }
 
