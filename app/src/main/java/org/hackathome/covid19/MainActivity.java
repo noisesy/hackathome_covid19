@@ -31,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
     // TODO: only for test purpose
     public static ArrayList<Misurazione> listaDiProva;
 
-    public static final String PATIENT_ID = "667";
+    public static final String PATIENT_ID = "665";
+    public static final String NAME = "George W.";
+    public static final String SURNAME = "Bush";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        Paziente paziente = new Paziente(PATIENT_ID, "Pinco", "Pallino");
+        Paziente paziente = new Paziente(PATIENT_ID, NAME, SURNAME);
 
 
         //int id, Paziente paziente, List<Sintomi> sintomi, float temperaturaCorporea,

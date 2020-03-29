@@ -15,12 +15,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.hackathome.covid19.model.Misurazione;
+import org.hackathome.covid19.model.Sintomi;
 import org.hackathome.covid19.rest.RestManager;
 
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -83,6 +85,9 @@ public class FirstFragment extends Fragment {
     }
 
     private void refreshRecyclerView() {
+
+        Collections.reverse(mMisurazioni);
+
         MisurazioniAdapter listAdapter = new MisurazioniAdapter(mMisurazioni);
         LinearLayoutManager manager = new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false);
@@ -122,6 +127,16 @@ public class FirstFragment extends Fragment {
                 holder.data.setText("Nessuna data");
             }
 
+            String sin= "";
+            for (Sintomi s: item.getSintomi()) {
+                sin += s.getNome() + "\n";
+
+            }
+
+            holder.sintomi.setText(sin);
+
+            holder.note.setText(item.getNote());
+
 
             holder.misurazione.setText(Float.toString(item.getTemperaturaCorporea()));
         }
@@ -134,11 +149,15 @@ public class FirstFragment extends Fragment {
         class MisurazioneViewHolder extends RecyclerView.ViewHolder {
             TextView data;
             TextView misurazione;
+            TextView sintomi;
+            TextView note;
 
             MisurazioneViewHolder(View itemView) {
                 super(itemView);
                 data = itemView.findViewById(R.id.text_data);
                 misurazione = itemView.findViewById(R.id.text_misurazione);
+                sintomi = itemView.findViewById(R.id.text_sintomi);
+                note = itemView.findViewById(R.id.text_note);
             }
         }
     }

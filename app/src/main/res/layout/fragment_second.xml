@@ -140,7 +140,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="35dp"
-        android:hint="hint"
+        android:hint="36.5"
         android:inputType="number|numberDecimal"
         android:textSize="18dp"
         app:layout_constraintStart_toEndOf="@+id/textView2"

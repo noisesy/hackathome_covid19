@@ -22,7 +22,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static org.hackathome.covid19.MainActivity.NAME;
 import static org.hackathome.covid19.MainActivity.PATIENT_ID;
+import static org.hackathome.covid19.MainActivity.SURNAME;
 
 public class SecondFragment extends Fragment {
 
@@ -49,7 +51,7 @@ public class SecondFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Misurazione mis = new Misurazione();
-                Paziente paziente = new Paziente(PATIENT_ID, "Pinco", "Pallino");
+                Paziente paziente = new Paziente(PATIENT_ID, NAME, SURNAME);
                 Sintomi sintomi = new Sintomi();
                 List<Sintomi> listaSintomi = new ArrayList<>();
                 Sintomi tosse = new Sintomi(0, "Tosse");
