@@ -22,6 +22,7 @@ import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -84,6 +85,9 @@ public class FirstFragment extends Fragment {
     }
 
     private void refreshRecyclerView() {
+
+        Collections.reverse(mMisurazioni);
+
         MisurazioniAdapter listAdapter = new MisurazioniAdapter(mMisurazioni);
         LinearLayoutManager manager = new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false);
