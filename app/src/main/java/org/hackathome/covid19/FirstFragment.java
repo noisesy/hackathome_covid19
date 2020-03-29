@@ -24,6 +24,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import static org.hackathome.covid19.MainActivity.PATIENT_ID;
+
 public class FirstFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
@@ -60,7 +62,7 @@ public class FirstFragment extends Fragment {
 
     private void getMisurazioni() {
 
-        RestManager.getInstance(getContext()).getMisurazioni("666",
+        RestManager.getInstance(getContext()).getMisurazioni(PATIENT_ID,
                 response -> {
                     Log.i("MAIN", response.toString());
 

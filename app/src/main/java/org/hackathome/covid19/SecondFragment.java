@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static org.hackathome.covid19.MainActivity.PATIENT_ID;
 public class SecondFragment extends Fragment {
 
     @Override
@@ -42,7 +43,7 @@ public class SecondFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Misurazione mis = new Misurazione();
-                Paziente paziente = new Paziente("666", "Pinco", "Pallino");
+                Paziente paziente = new Paziente(PATIENT_ID, "Pinco", "Pallino");
                 Sintomi sintomi = new Sintomi();
                 List<Sintomi> listaSintomi = new ArrayList<>();
                 Sintomi tosse = new Sintomi(0, "Tosse");
