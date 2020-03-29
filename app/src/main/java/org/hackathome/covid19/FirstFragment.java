@@ -76,6 +76,7 @@ public class FirstFragment extends Fragment {
                 response -> {
                     Log.i("MAIN", response.toString());
 
+                    mMisurazioni.clear();
                     for (Misurazione m: response) {
                         Log.i("FIRST", m.toString());
                         mMisurazioni.add(m);
