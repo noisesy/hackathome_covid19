@@ -26,6 +26,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.ListIterator;
 
@@ -52,6 +53,8 @@ public class GraphFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         LineGraphSeries<DataPoint> temperature;
+
+        Collections.reverse(FirstFragment.mMisurazioni);
 
         ListIterator<Misurazione> cycle = null;
         cycle = FirstFragment.mMisurazioni.listIterator();
