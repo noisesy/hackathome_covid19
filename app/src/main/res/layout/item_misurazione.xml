@@ -16,6 +16,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="TextView"
+        android:textSize="16sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@id/label_sintomi"
         app:layout_constraintEnd_toStartOf="@+id/text_misurazione"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Temperatura:"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/text_misurazione"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,11 +49,12 @@
         android:id="@+id/label_sintomi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SINTOMI:"
         android:gravity="start"
+        android:text="SINTOMI:"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/label_sintomi"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_data" />
 
     <TextView
@@ -68,11 +72,12 @@
         android:id="@+id/label_note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NOTE:"
         android:gravity="start"
+        android:text="NOTE:"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/text_note"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_sintomi" />
 
     <TextView
