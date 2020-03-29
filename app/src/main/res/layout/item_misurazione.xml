@@ -19,7 +19,7 @@
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@id/label_sintomi"
-        app:layout_constraintEnd_toStartOf="@id/label_temp"
+        app:layout_constraintEnd_toStartOf="@id/text_data"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/text_sintomi"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,16 +48,15 @@
         app:layout_constraintVertical_bias="1.0" />
 
 
-
-
     <TextView
         android:id="@+id/label_sintomi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:gravity="start"
         android:text="Sintomi:"
-        android:textColor="#2196F3"
 
+        android:textColor="#2196F3"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/text_sintomi"
         app:layout_constraintStart_toStartOf="parent"
