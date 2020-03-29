@@ -101,11 +101,17 @@ public class MainActivity extends AppCompatActivity {
         listSintomi.add(sintomo_1);
         listSintomi.add(sintomo_2);
 
-        Misurazione mis = new Misurazione(0, paziente, listSintomi, 37.6F, "nessuna", "", "");
+
+        long millis = new Date().getTime();
 
 
 
-//
+        Misurazione mis = new Misurazione(0, paziente, listSintomi, 37.6F,
+                "nessuna", "", Long.toString(millis));
+
+
+
+
 //        RestManager.getInstance(this).postMisurazione (mis,
 //                response -> {
 //                    //Log.i("MAIN", response.toString());
@@ -114,12 +120,12 @@ public class MainActivity extends AppCompatActivity {
 //                });
 
 
-        RestManager.getInstance(this).getMisurazioni("666",
-                response -> {
-                    Log.i("MAIN", response.toString());
-                }, error -> {
-                    Log.i("MAIN", "Error");
-                });
+//        RestManager.getInstance(this).getMisurazioni("666",
+//                response -> {
+//                    Log.i("MAIN", response.toString());
+//                }, error -> {
+//                    Log.i("MAIN", "Error");
+//                });
 
     }
 
