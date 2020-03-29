@@ -28,9 +28,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@id/text_sintomi"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/text_sintomi"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_misurazione2"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -38,10 +39,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Temperatura:"
+        android:textColor="#2196F3"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/text_misurazione"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/label_sintomi"
         app:layout_constraintVertical_bias="0.0" />
 
 
@@ -50,11 +52,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="start"
-        android:text="SINTOMI:"
+        android:text="Sintomi:"
+        android:textColor="#2196F3"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/label_sintomi"
-
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_data"
         app:layout_constraintTop_toBottomOf="@+id/text_data" />
 
     <TextView
@@ -64,8 +67,6 @@
         android:text="Sintomi:"
         android:gravity="start"
         app:layout_constraintBottom_toTopOf="@id/label_note"
-        app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/label_sintomi" />
 
     <TextView
@@ -73,10 +74,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="start"
-        android:text="NOTE:"
+        android:text="Note:"
+        android:textColor="#2196F3"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/text_note"
 
+        app:layout_constraintBottom_toTopOf="@id/text_note"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_sintomi" />
 
