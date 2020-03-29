@@ -146,8 +146,14 @@ public class FirstFragment extends Fragment {
 
             holder.note.setText(item.getNote());
 
-
+            if(item.getTemperaturaCorporea() > 37.4f)
+                holder.misurazione.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+            else if(item.getTemperaturaCorporea() < 37.0f)
+                holder.misurazione.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
+            else
+                holder.misurazione.setTextColor(getResources().getColor(android.R.color.holo_orange_dark));
             holder.misurazione.setText(Float.toString(item.getTemperaturaCorporea()));
+
         }
 
         @Override
