@@ -54,7 +54,7 @@ public class GraphFragment extends Fragment {
         LineGraphSeries<DataPoint> temperature;
 
         ListIterator<Misurazione> cycle = null;
-        cycle = MainActivity.listaDiProva.listIterator();
+        cycle = FirstFragment.mMisurazioni.listIterator();
 
         float y;
         int x = 0;

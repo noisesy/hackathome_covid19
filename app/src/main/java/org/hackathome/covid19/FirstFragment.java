@@ -56,11 +56,19 @@ public class FirstFragment extends Fragment {
             }
         });
 
+        view.findViewById(R.id.graph_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_GraphFragment);
+            }
+        });
+
         getMisurazioni();
     }
 
 
-    private ArrayList<Misurazione> mMisurazioni = new ArrayList<>();
+    static public ArrayList<Misurazione> mMisurazioni = new ArrayList<>();
 
     private void getMisurazioni() {
 

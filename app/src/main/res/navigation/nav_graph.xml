@@ -14,6 +14,10 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+
+        <action
+            android:id="@+id/action_FirstFragment_to_GraphFragment"
+            app:destination="@id/GraphFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -23,6 +27,16 @@
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/GraphFragment"
+        android:name="org.hackathome.covid19.GraphFragment"
+        android:label="Graph Fragment"
+        tools:layout="@layout/fragment_graphs">
+
+        <action
+            android:id="@+id/action_GraphFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
