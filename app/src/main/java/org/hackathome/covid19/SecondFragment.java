@@ -18,6 +18,7 @@ import org.hackathome.covid19.model.Sintomi;
 import org.hackathome.covid19.rest.RestManager;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class SecondFragment extends Fragment {
@@ -33,6 +34,9 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        final TextInputEditText sTempe = view.findViewById(R.id.textInputEditText2);
+        final TextInputEditText sNote = view.findViewById(R.id.textInputEditText);
 
         view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,16 +57,21 @@ public class SecondFragment extends Fragment {
                     listaSintomi.add(raffreddore);
 
                 mis.setId(0);
-                TextInputEditText istanzaVeraDelMioOggetto = view.findViewById(R.id.textInputEditText);
-                mis.setNote(istanzaVeraDelMioOggetto.getText().toString());
-                istanzaVeraDelMioOggetto = view.findViewById(R.id.textInputEditText2);
-                mis.setTemperaturaCorporea(Float.valueOf(istanzaVeraDelMioOggetto.getText().toString()));
+
+                mis.setNote(sNote.getText().toString());
+
+                mis.setTemperaturaCorporea(Float.valueOf(sTempe.getText().toString()));
                 mis.setPaziente(paziente);
                 mis.setSintomi(listaSintomi);
 
+                long millis = new Date().getTime();
+                mis.setData(Long.toString(millis));
+
+                Log.i("Sending", mis.toString());
+
                 RestManager.getInstance(getContext()).postMisurazione (mis,
                 response -> {
-                    Log.i("SecondFragment", response.toString());
+
                     }, error -> {
                     Log.i("SecondFragment", "Error");
                 });

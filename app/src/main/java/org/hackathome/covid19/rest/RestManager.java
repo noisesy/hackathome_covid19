@@ -129,15 +129,15 @@ public class RestManager {
         return queue.add(request_plants);
     }
 
-    public Request postMisurazione(Misurazione misurazione, Response.Listener<Misurazione> listener,
+    public Request postMisurazione(Misurazione misurazione, Response.Listener<String> listener,
                                Response.ErrorListener errorListener) {
         Log.i(TAG, "BODY " + misurazione.toString());
         if (queue == null)
             queue = Volley.newRequestQueue(_ctx);
-        GsonRequest<Misurazione> request_post_misurazione = new GsonRequest<>(
+        GsonRequest<String> request_post_misurazione = new GsonRequest<>(
                 Request.Method.PUT,
                 "https://tomcat.milosmagicworld.eu/webapp-coronastudio/api/misurazioni/",
-                Misurazione.class,
+                String.class,
                 getHeaders(),
                 null,
                 misurazione.toString(),
