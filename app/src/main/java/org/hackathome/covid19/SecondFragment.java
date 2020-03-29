@@ -80,13 +80,13 @@ public class SecondFragment extends Fragment {
 
                 RestManager.getInstance(getContext()).postMisurazione (mis,
                 response -> {
+                    NavHostFragment.findNavController(SecondFragment.this)
+                            .navigate(R.id.action_SecondFragment_to_FirstFragment);
 
                     }, error -> {
                     Log.i("SecondFragment", "Error");
                 });
 
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
     }
