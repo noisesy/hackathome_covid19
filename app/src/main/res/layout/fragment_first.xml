@@ -59,7 +59,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:background="#2196F3"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@android:drawable/ic_menu_edit"
         app:backgroundTint="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
