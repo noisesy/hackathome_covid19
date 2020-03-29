@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.hackathome.covid19.model.Misurazione;
+import org.hackathome.covid19.model.Sintomi;
 import org.hackathome.covid19.rest.RestManager;
 
 import java.lang.reflect.Array;
@@ -122,6 +123,16 @@ public class FirstFragment extends Fragment {
                 holder.data.setText("Nessuna data");
             }
 
+            String sin= "SINTOMI:\n";
+            for (Sintomi s: item.getSintomi()) {
+                sin += s.getNome() + "\n";
+
+            }
+
+            holder.sintomi.setText(sin);
+
+
+
 
             holder.misurazione.setText(Float.toString(item.getTemperaturaCorporea()));
         }
@@ -134,11 +145,13 @@ public class FirstFragment extends Fragment {
         class MisurazioneViewHolder extends RecyclerView.ViewHolder {
             TextView data;
             TextView misurazione;
+            TextView sintomi;
 
             MisurazioneViewHolder(View itemView) {
                 super(itemView);
                 data = itemView.findViewById(R.id.text_data);
                 misurazione = itemView.findViewById(R.id.text_misurazione);
+                sintomi = itemView.findViewById(R.id.text_sintomi);
             }
         }
     }
