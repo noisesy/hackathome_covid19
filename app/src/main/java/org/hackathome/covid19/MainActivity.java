@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
     // TODO: only for test purpose
     public static ArrayList<Misurazione> listaDiProva;
 
-    public static final String PATIENT_ID = "665";
-    public static final String NAME = "George W.";
-    public static final String SURNAME = "Bush";
+    public static final String PATIENT_ID = "DPRPNT80A01F205X";
+    public static final String NAME = "Paziente";
+    public static final String SURNAME = "Diprova";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
