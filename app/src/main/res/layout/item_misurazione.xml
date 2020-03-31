@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:padding="12dp"
     android:background="@drawable/border"
-    android:elevation="8dp">
+    android:elevation="5dp"
+    android:padding="12dp">
 
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="18sp"
-        android:textStyle="italic"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@id/label_sintomi"
         app:layout_constraintEnd_toStartOf="@id/text_data"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:id="@+id/label_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Temperatura:"
+        android:text="Temperatura"
         android:textColor="#2196F3"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -41,13 +41,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/text_sintomi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/label_temp"
         app:layout_constraintTop_toBottomOf="@id/label_temp"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintVertical_bias="1.0" />s
 
     <TextView
         android:id="@+id/label_sintomi"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:gravity="start"
-        android:text="Sintomi:"
+        android:text="Sintomi"
 
         android:textColor="#2196F3"
         android:textSize="16sp"
@@ -72,18 +72,19 @@
         android:text="Sintomi:"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/label_note"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/label_sintomi"
         app:layout_constraintTop_toBottomOf="@id/label_sintomi" />
 
     <TextView
         android:id="@+id/label_note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="start"
-        android:text="Note:"
+        android:text="Note"
         android:textColor="#2196F3"
-        android:textSize="16sp"
 
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/text_note"
         app:layout_constraintStart_toStartOf="parent"

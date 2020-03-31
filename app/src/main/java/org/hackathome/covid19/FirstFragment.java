@@ -127,6 +127,7 @@ public class FirstFragment extends Fragment {
         public void onBindViewHolder(@NonNull MisurazioniAdapter.MisurazioneViewHolder holder, int position) {
             Misurazione item = listOfItems.get(position);
 
+            Log.i("Data", item.getData());
             if (item.getData() != null) {
                 Log.i("TAG", item.getData());
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");
@@ -137,14 +138,28 @@ public class FirstFragment extends Fragment {
             }
 
             String sin= "";
-            for (Sintomi s: item.getSintomi()) {
-                sin += s.getNome() + "\n";
-
+            String s;
+            int i=0;
+            if (item.getSintomi().size() > 0) {
+                while(i<item.getSintomi().size())
+                {
+                    if(i!=(item.getSintomi().size()-1))
+                        sin += item.getSintomi().get(i).getNome() + "\n";
+                    else
+                        sin += item.getSintomi().get(i).getNome();
+                    i++;
+                }
+            } else {
+                sin = "Nessuno";
             }
 
             holder.sintomi.setText(sin);
 
-            holder.note.setText(item.getNote());
+            if (!item.getNote().isEmpty()) {
+                holder.note.setText(item.getNote());
+            } else {
+                holder.note.setText("Nessuna");
+            }
 
             if(item.getTemperaturaCorporea() > 37.4f)
                 holder.misurazione.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
@@ -152,7 +167,7 @@ public class FirstFragment extends Fragment {
                 holder.misurazione.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
             else
                 holder.misurazione.setTextColor(getResources().getColor(android.R.color.holo_orange_dark));
-            holder.misurazione.setText(Float.toString(item.getTemperaturaCorporea()));
+            holder.misurazione.setText(Float.toString(item.getTemperaturaCorporea()) + "°");
 
         }
 
